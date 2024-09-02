@@ -112,11 +112,95 @@
         line-height: 1.4;
       }
 
+      .card-projects {
+          width: min(300px, 100%);
+          margin: auto;
+          background-color: #f4f5f2;
+          text-align: center;
+          border-top-left-radius: 4rem;
+          border: 2px solid #fff;
+          position: relative;
+          height: 300px; /* Set a fixed height for the card */
+          cursor: pointer;
+      }
+
+      .card__body {
+          padding: 3rem 0.5rem;
+          max-width: 25ch;
+          margin: auto;
+      }
+
+      .card__title {
+          font-weight: 800;
+          color: #121513;
+          font-size: 1rem;
+          margin-block: 2.5rem 0.75rem;
+      }
+
+      .card__paragraph {
+          color: #303830;
+          font-size: 0.875rem;
+      }
+
+      .card__ribbon {
+          margin-top: 1.5rem;
+          display: grid;
+          place-items: center;
+          height: 50px;
+          background-image: linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%);
+          position: absolute;
+          bottom: -10px; /* Position the ribbon at the bottom of the card */
+          width: 110%;
+          left: -5%;
+          border-radius: 0 0 2rem 2rem;
+          
+      }
+
+      .card__ribbon::after,
+      .card__ribbon::before {
+          content: "";
+          position: absolute;
+          width: 20px;
+          aspect-ratio: 1/1;
+          bottom: 100%;
+          z-index: -2;
+          background-color: #191c39;
+          cursor: pointer;
+      }
+
+      .card__ribbon::before {
+          left: 0;
+          transform-origin: left bottom;
+          transform: rotate(45deg);
+      }
+
+      .card__ribbon::after {
+          right: 0;
+          transform-origin: right bottom;
+          transform: rotate(-45deg);
+      }
+
+      .card__ribbon-label {
+          display: block;
+          width: 84px;
+          aspect-ratio: 1/1;
+          background-color: #fff;
+          position: relative;
+          transform: translateY(-50%);
+          border-radius: 50%;
+          border: 8px solid #29323c;
+          display: grid;
+          place-items: center;
+          font-weight: 900;
+          line-height: 1;
+          font-size: 1.5rem;
+          cursor: pointer;
+      }
     </style>
 
     
 </head>
-<body class="font-google">
+<body class="font-google bg-reference">
 <header>
   <div class="navbar navbar-dark bg-dark shadow-sm">
     <div class="container">
@@ -174,7 +258,7 @@
   </section>
 </main>
 <main>
-  <section class="py-5 container " id="about_tab">
+  <section class="py-5 container bg" id="about_tab">
     <div class="row">
       <div class="col-sm-12 col-md-5 col-lg-5">
         <div class="card mb-2 bg-contents animate__animated animate__bounceIn">
@@ -307,10 +391,304 @@
     </div>
   </section>
   <section class="py-5 container" id="projects_tab">
-    Projects
+    <div class="row">
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="card-projects animate__animated animate__bounceIn m-5">
+          <div class="card__body">
+            <div class="card__icon">
+              <i class="fa-solid fa-map-location-dot fa-2x text-bg"></i>
+            </div>
+            <p class="card__title">PSG ATLAS - Advanced Technological Land Assessment System</p>
+          </div>
+          <div class="card__ribbon">
+            <label class="card__ribbon-label">01</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="card-projects animate__animated animate__bounceIn m-5">
+          <div class="card__body">
+            <div class="card__icon">
+              <i class="fa-solid fa-shield-check fa-2x text-bg"></i>
+            </div>
+            <p class="card__title">PSG EHS - Environment, Health & Safety</p>
+          </div>
+          <div class="card__ribbon">
+            <label class="card__ribbon-label">02</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="card-projects animate__animated animate__bounceIn m-5">
+          <div class="card__body">
+            <div class="card__icon">
+              <i class="fa-solid fa-salad fa-2x text-bg"></i>
+            </div>
+            <p class="card__title">COINS - Comer Ordering & Inventory System</p>
+          </div>
+          <div class="card__ribbon">
+            <label class="card__ribbon-label">03</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="card-projects animate__animated animate__bounceIn m-5">
+          <div class="card__body">
+            <div class="card__icon">
+              <i class="fa-solid fa-dumbbell fa-2x text-bg"></i>
+            </div>
+            <p class="card__title">66FIT - Gym Scheduling System</p>
+          </div>
+          <div class="card__ribbon">
+            <label class="card__ribbon-label">04</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="card-projects animate__animated animate__bounceIn m-5">
+          <div class="card__body">
+            <div class="card__icon">
+              <i class="fa-solid fa-fingerprint fa-2x text-bg"></i>
+            </div>
+            <p class="card__title">Biometrics Management System</p>
+          </div>
+          <div class="card__ribbon">
+            <label class="card__ribbon-label">05</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="card-projects animate__animated animate__bounceIn m-5">
+          <div class="card__body">
+            <div class="card__icon">
+              <i class="fa-solid fa-comment fa-2x text-bg"></i>
+            </div>
+            <p class="card__title">Feedback Management System</p>
+          </div>
+          <div class="card__ribbon">
+            <label class="card__ribbon-label">06</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="card-projects animate__animated animate__bounceIn m-5">
+          <div class="card__body">
+            <div class="card__icon">
+              <i class="fa-solid fa-car-side fa-2x text-bg"></i>
+            </div>
+            <p class="card__title">PVRS - Personal Vehicle Registration System</p>
+          </div>
+          <div class="card__ribbon">
+            <label class="card__ribbon-label">07</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="card-projects animate__animated animate__bounceIn m-5">
+          <div class="card__body">
+            <div class="card__icon">
+              <i class="fa-solid fa-tree-palm fa-2x text-bg"></i>
+            </div>
+            <p class="card__title">Plants & Trees - QR Information System</p>
+          </div>
+          <div class="card__ribbon">
+            <label class="card__ribbon-label">08</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="card-projects animate__animated animate__bounceIn m-5">
+          <div class="card__body">
+            <div class="card__icon">
+              <i class="fa-solid fa-plane-engines fa-2x text-bg"></i>
+            </div>
+            <p class="card__title">TNF - Transport Booking System</p>
+          </div>
+          <div class="card__ribbon">
+            <label class="card__ribbon-label">09</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="card-projects animate__animated animate__bounceIn m-5">
+          <div class="card__body">
+            <div class="card__icon">
+              <i class="fa-solid fa-building-columns fa-2x text-bg"></i>
+            </div>
+            <p class="card__title">City of San Juan - Dynamic Website</p>
+          </div>
+          <div class="card__ribbon">
+            <label class="card__ribbon-label">10</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="card-projects animate__animated animate__bounceIn m-5">
+          <div class="card__body">
+            <div class="card__icon">
+              <i class="fa-solid fa-building-columns fa-2x text-bg"></i>
+            </div>
+            <p class="card__title">SKILLS - Class Management System</p>
+          </div>
+          <div class="card__ribbon">
+            <label class="card__ribbon-label">11</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="card-projects animate__animated animate__bounceIn m-5">
+          <div class="card__body">
+            <div class="card__icon">
+              <i class="fa-solid fa-building-columns fa-2x text-bg"></i>
+            </div>
+            <p class="card__title">BAC - Bid Posting System</p>
+          </div>
+          <div class="card__ribbon">
+            <label class="card__ribbon-label">12</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="card-projects animate__animated animate__bounceIn m-5">
+          <div class="card__body">
+            <div class="card__icon">
+              <i class="fa-solid fa-wreath fa-2x text-bg"></i>
+            </div>
+            <p class="card__title">Tourism - Christmas Bazaar Registration & Monitoring System</p>
+          </div>
+          <div class="card__ribbon">
+            <label class="card__ribbon-label">13</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="card-projects animate__animated animate__bounceIn m-5">
+          <div class="card__body">
+            <div class="card__icon">
+              <i class="fa-solid fa-tombstone fa-2x text-bg"></i>
+            </div>
+            <p class="card__title">Cemetery Management System</p>
+          </div>
+          <div class="card__ribbon">
+            <label class="card__ribbon-label">14</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="card-projects animate__animated animate__bounceIn m-5">
+          <div class="card__body">
+            <div class="card__icon">
+              <i class="fa-solid fa-person-arrow-up-from-line fa-2x text-bg"></i>
+            </div>
+            <p class="card__title">Population Development Management System</p>
+          </div>
+          <div class="card__ribbon">
+            <label class="card__ribbon-label">15</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="card-projects animate__animated animate__bounceIn m-5">
+          <div class="card__body">
+            <div class="card__icon">
+              <i class="fa-solid fa-building-columns fa-2x text-bg"></i>
+            </div>
+            <p class="card__title">Tourism Registry</p>
+          </div>
+          <div class="card__ribbon">
+            <label class="card__ribbon-label">16</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="card-projects animate__animated animate__bounceIn m-5">
+          <div class="card__body">
+            <div class="card__icon">
+              <i class="fa-solid fa-ticket fa-2x text-bg"></i>
+            </div>
+            <p class="card__title">San Juan Queueing / Ticketing System</p>
+          </div>
+          <div class="card__ribbon">
+            <label class="card__ribbon-label">17</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="card-projects animate__animated animate__bounceIn m-5">
+          <div class="card__body">
+            <div class="card__icon">
+              <i class="fa-solid fa-route fa-2x text-bg"></i>
+            </div>
+            <p class="card__title">San Juan City Directory</p>
+          </div>
+          <div class="card__ribbon">
+            <label class="card__ribbon-label">18</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="card-projects animate__animated animate__bounceIn m-5">
+          <div class="card__body">
+            <div class="card__icon">
+              <i class="fa-solid fa-id-card fa-2x text-bg"></i>
+            </div>
+            <p class="card__title">OSCIRIS - Office of the Senior Citizen Information Registry & ID System</p>
+          </div>
+          <div class="card__ribbon">
+            <label class="card__ribbon-label">19</label>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
   <section class="py-5 container" id="contact_tab">
-    Contact
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="card bg-contents animate__animated animate__bounceIn">
+          <div class="card-body">
+            <h6 class="fw-bold text-bg">YOU CAN CONTACT ME THROUGH:</h6>
+            <hr>
+            <div class="row">
+              <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="card bg-reference text-center">
+                  <div class="card-body py-4">
+                    <div class="row">
+                      <div class="col-4 d-flex justify-content-center align-items-center animate__animated animate__fadeIn">
+                        <i class="fa-solid fa-phone fa-lg"></i>
+                      </div>
+                      <div class="col-4 border-start border-dark animate__animated animate__fadeIn">
+                        <span class="fw-bold">Phone</span>
+                      </div>
+                      <div class="col-4 border-start border-dark animate__animated animate__fadeIn">
+                        <span class="fw-bold">09369456917</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="card bg-reference text-center">
+                  <div class="card-body py-4">
+                    <div class="row">
+                      <div class="col-3 d-flex justify-content-center align-items-center animate__animated animate__fadeIn">
+                        <i class="fa-solid fa-envelope fa-lg"></i>
+                      </div>
+                      <div class="col-3 border-start border-dark d-flex justify-content-center align-items-center animate__animated animate__fadeIn">
+                        <span class="fw-bold">Email</span>
+                      </div>
+                      <div class="col-6 border-start border-dark animate__animated animate__fadeIn">
+                        <span class="fw-bold">rolyngonzales458@gmail.com</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
   </section>
 </main>
 
@@ -320,8 +698,8 @@
     <p class="float-end mb-1">
       <a href="#">Back to top</a>
     </p>
-    <p class="mb-1">Album example is © Bootstrap, but please download and customize it for yourself!</p>
-    <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="/docs/5.0/getting-started/introduction/">getting started guide</a>.</p>
+    <p class="mb-1">My Portfolio © Rolyn Jay P. Gonzales, 2024</p>
+    
   </div>
 </footer>
 
