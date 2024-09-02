@@ -15,6 +15,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <!-- JS Animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
     <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
@@ -26,19 +28,29 @@
 
 
     <style>
-        .font-google{
-            font-family: 'DM Sans', sans-serif;
-        }
+      .font-google{
+          font-family: 'DM Sans', sans-serif;
+      }
 
-        .bg-header{
-          background-image: linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%);
-        }
-        
-        .text-bg{
-          background: -webkit-linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
+      .bg-header{
+        background-image: linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%);
+      }
+      
+      .bg-contents{
+        background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+      }
+
+      .bg-reference{
+        background-color: #CDDCDC;
+        background-image: radial-gradient(at 50% 100%, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), linear-gradient(to bottom, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%);
+        background-blend-mode: screen, overlay;
+      }
+      
+      .text-bg{
+        background: -webkit-linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
 
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -53,6 +65,53 @@
           font-size: 3.5rem;
         }
       }
+
+      .card-control {
+        position: relative;
+        width: 100%;
+        height: 100px;
+        background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+        cursor: pointer;
+      }
+
+      .card-control:hover {
+        transform: rotate(-5deg) scale(1.1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .card__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        background-color: #CDDCDC;
+        background-image: radial-gradient(at 50% 100%, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), linear-gradient(to bottom, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%);
+        background-blend-mode: screen, overlay;
+        opacity: 0;
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+      }
+
+      .card-control:hover .card__content {
+        transform: translate(-50%, -50%) rotate(0deg);
+        opacity: 1;
+      }
+
+      .card__description {
+        margin: 10px 0 0;
+        font-size: 14px;
+        color: #777;
+        line-height: 1.4;
+      }
+
     </style>
 
     
@@ -74,55 +133,189 @@
     <div class="row py-lg-3">
       <div class="col-lg-6 col-md-8 mx-auto">
         <div class="text-center mb-4">
-          <img src="assets/profile-2.png" class="rounded-circle w-25" alt="...">
+          <img src="assets/profile-2.png" class="rounded-circle w-25 animate__animated animate__fadeIn" alt="...">
         </div>
-        <h1 class="fw-bold">Rolyn Jay P. Gonzales</h1>
-        <p class="lead text-dark fst-italic">An enthusiastic digital designer and developer that loves to bring concepts to reality.</p>
+        <h1 class="fw-bold animate__animated animate__fadeIn">Rolyn Jay P. Gonzales</h1>
+        <p class="lead text-dark fst-italic animate__animated animate__fadeIn">An enthusiastic digital designer and developer that loves to bring concepts to reality.</p>
       </div>
     </div>
     <hr>
     <div class="row py-lg-3">
       <div class="col-lg-6 col-md-8 mx-auto">
         <div class="row">
-          <div class="col-sm-12 col-md-4 col-lg-4">
-            <div class="card bg-dark">
-              <div class="container py-3">
-                <i class="fa-solid fa-user-vneck fa-2x text-bg"></i>
-                <hr style="background: -webkit-linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%);">
-                <span class="fw-bold text-bg">ABOUT ME</span>
+          <div class="col-sm-4 col-md-4 col-lg-4">
+
+            <div class="card-control animate__animated animate__bounceIn" id="about_btn">
+              <i class="fa-solid fa-user-vneck fa-2x text-bg"></i>
+              <div class="card__content d-flex align-items-center justify-content-center">
+                <p class="fw-bold">ABOUT ME
               </div>
             </div>
           </div>
-          <div class="col-sm-12 col-md-4 col-lg-4">
-            <div class="card bg-dark">
-              <div class="container py-3">
-                <i class="fa-solid fa-code fa-2x text-bg"></i>
-                <hr style="background: -webkit-linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%);">
-                <span class="fw-bold text-bg">PROJECTS</span>
+          <div class="col-sm-4 col-md-4 col-lg-4">
+            <div class="card-control animate__animated animate__bounceIn" id="projects_btn">
+              <i class="fa-solid fa-code fa-2x text-bg"></i>
+              <div class="card__content d-flex align-items-center justify-content-center">
+                <p class="fw-bold">PROJECTS
               </div>
             </div>
           </div>
-          <div class="col-sm-12 col-md-4 col-lg-4">
-            <div class="card bg-dark">
-              <div class="container py-3">
-                <i class="fa-solid fa-envelopes-bulk fa-2x text-bg"></i>
-                <hr style="background: -webkit-linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%);">
-                <span class="fw-bold text-bg">CONTACT ME</span>
+          <div class="col-sm-4 col-md-4 col-lg-4">
+            <div class="card-control animate__animated animate__bounceIn" id="contact_btn">
+              <i class="fa-solid fa-envelopes-bulk fa-2x text-bg"></i>
+              <div class="card__content d-flex align-items-center justify-content-center">
+                <p class="fw-bold">CONTACT ME
               </div>
             </div>
           </div>
         </div>
-        
-        
       </div>
     </div>
   </section>
-
- 
-
+</main>
+<main>
+  <section class="py-5 container " id="about_tab">
+    <div class="row">
+      <div class="col-sm-12 col-md-5 col-lg-5">
+        <div class="card mb-2 bg-contents animate__animated animate__bounceIn">
+          <div class="card-body">
+            <h6 class="fw-bold text-bg">HOBBIES</h6>
+            <hr>
+            <div class="row">
+              <div class="col text-center">
+                <div class="container py-2">
+                  <i class="fa-solid fa-code fa-2x text-bg  animate__animated animate__fadeIn"></i>
+                  <p class=" text-bg  animate__animated animate__fadeIn text-xs mt-2">Coding</p>
+                </div>
+              </div>
+              <div class="col text-center">
+                <div class="container py-2">
+                  <i class="fa-solid fa-camera-retro fa-2x text-bg  animate__animated animate__fadeIn"></i>
+                  <p class=" text-bg  animate__animated animate__fadeIn text-xs mt-2">Photography</p>
+                </div>
+              </div>
+              <div class="col text-center">
+                <div class="container py-2">                  
+                  <i class="fa-solid fa-music fa-2x text-bg  animate__animated animate__fadeIn"></i>
+                  <p class=" text-bg  animate__animated animate__fadeIn text-xs mt-2">Music</p>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col text-center">
+                <div class="container py-2">
+                  <i class="fa-solid fa-book fa-2x text-bg  animate__animated animate__fadeIn"></i>
+                  <p class=" text-bg  animate__animated animate__fadeIn text-xs mt-2">Reading</p>
+                </div>
+              </div>
+              <div class="col text-center">
+                <div class="container py-2">
+                  <i class="fa-solid fa-gamepad-modern fa-2x text-bg  animate__animated animate__fadeIn"></i>
+                  <p class=" text-bg  animate__animated animate__fadeIn text-xs mt-2">Gaming</p>
+                </div>
+              </div>
+              <div class="col text-center">
+                <div class="container py-2">
+                  <i class="fa-solid fa-compass fa-2x text-bg  animate__animated animate__fadeIn"></i>
+                  <p class=" text-bg  animate__animated animate__fadeIn text-xs mt-2">Travel</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card bg-contents animate__animated animate__bounceIn">
+          <div class="card-body">
+            <h6 class="fw-bold text-bg">REFERENCES</h6>
+            <hr>
+            <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="card animate__animated animate__fadeIn bg-reference mb-1">
+                  <div class="card-body">
+                    <span class="fw-bold">Jan Harry S. Catarroja</span><br>
+                    <span>System / Web Developer</span><br>
+                    <span>09267085616</span>
+                  </div>
+                </div>
+                <div class="card animate__animated animate__fadeIn bg-reference mb-1">
+                  <div class="card-body">
+                    <span class="fw-bold">Kyle V. Gaza</span><br>
+                    <span>Computer Programmer 1</span><br>
+                    <span>09495087289</span>
+                  </div>
+                </div>
+                <div class="card animate__animated animate__fadeIn bg-reference mb-1">
+                  <div class="card-body">
+                    <span class="fw-bold">Aljun E. Obleada</span><br>
+                    <span>System / Web Developer & Tech Support</span><br>
+                    <span>09161486008</span>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-7 col-lg-7">
+        <div class="card bg-contents h-100 animate__animated animate__bounceIn">
+          <div class="card-body">
+            <h6 class="fw-bold text-bg">PERSONAL INFO</h6>
+            <hr>
+            <div class="row mb-2">
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="card animate__animated animate__fadeIn bg-reference">
+                  <div class="card-body">
+                    <span class="fw-bold">Education</span>
+                    <hr>
+                    <dl class="row">
+                      <dt class="col-sm-3 fst-italic">2015-2019</dt>
+                      <dd class="col-sm-9"><span class="fw-bold">Polytechnic University of the Philippines San Juan Campus</span>
+                        <br><span class="fst-italic">Bachelor of Science in Information Technology</span>
+                      </dd>
+                      <dt class="col-sm-3 fst-italic">2011-2015</dt>
+                      <dd class="col-sm-9"><span class="fw-bold">San Juan National High School</span>
+                        <br><span class="fst-italic">High School Graduate</span>
+                      </dd>
+                      <dt class="col-sm-3 fst-italic">2005-2011</dt>
+                      <dd class="col-sm-9"><span class="fw-bold">Sta Lucia Elementary School</span>
+                        <br><span class="fst-italic">Elementary School Graduate</span>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="card animate__animated animate__fadeIn bg-reference">
+                  <div class="card-body pb-0">
+                    <span class="fw-bold">Description</span>
+                    <hr>
+                    <p class="lh-lg" style="text-align: justify; text-indent: 2rem;">An avid tech geek with a talent for creating effective experiences out of pixels. 
+                      As a programmer, I enjoy writing clear, effective code that makes concepts come to life. 
+                      My love for web design enables me to produce visually appealing and intuitive user experiences that attract viewers. 
+                      As an avid gamer, I spend my free time exploring the vast landscapes of virtual environments when I'm not engaged in the world of programming. 
+                      As a phone photographer, I take pleasure in using my camera to capture the spirit and beauty of the world around me.
+                      I'm a flexible and motivated professional because of my wide skill set and passion for technology.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-5 container" id="projects_tab">
+    Projects
+  </section>
+  <section class="py-5 container" id="contact_tab">
+    Contact
+  </section>
 </main>
 
-<footer class="text-muted py-5">
+
+<footer class="text-muted py-5 bg-dark">
   <div class="container">
     <p class="float-end mb-1">
       <a href="#">Back to top</a>
@@ -135,7 +328,30 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="js/fontawesome6-pro.js"></script>
-      
-  
-
-</body></html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#projects_tab').hide();
+      $('#contact_tab').hide();
+    // About Function
+    $('#about_btn').click(function() {
+      $('#about_tab').show();
+      $('#projects_tab').hide();
+      $('#contact_tab').hide();
+    });
+    // Projects Function
+    $('#projects_btn').click(function() {
+      $('#about_tab').hide();
+      $('#projects_tab').show();
+      $('#contact_tab').hide();
+    });
+    // Contacts Function
+    $('#contact_btn').click(function() {
+      $('#about_tab').hide();
+      $('#projects_tab').hide();
+      $('#contact_tab').show();
+    });
+});
+</script>
+</body>
+</html>
