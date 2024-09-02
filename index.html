@@ -31,7 +31,12 @@
       .font-google{
           font-family: 'DM Sans', sans-serif;
       }
-
+      .bg-pic{
+        background-image: url("assets/AB3-blur1.jpg"); /* Replace "your_image.jpg" with your actual image path */
+        background-size: cover;
+        background-attachment: fixed;
+       
+      }
       .bg-header{
         /* background-image: linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%); */
         background: #FCBB6D;
@@ -52,15 +57,16 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent; */
         color: #FCBB6D;
+        
       }
 
-      .bd-placeholder-img {
+      /* .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
         -webkit-user-select: none;
         -moz-user-select: none;
         user-select: none;
-      }
+      } */
 
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
@@ -215,51 +221,54 @@
     </div>
   </div>
 </header>
-<main class="bg-header">
-  <section class="py-5 text-center container">
-    <div class="row py-lg-3">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <div class="text-center mb-4">
-          <img src="assets/profile-2.png" class="rounded-circle w-25 animate__animated animate__fadeIn" alt="...">
+<div class="bg-pic">
+  <main>
+    <section class="py-5 text-center container">
+      <div class="row py-lg-3">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <div class="text-center mb-4">
+            <img src="assets/profile-2.png" class="rounded-circle w-25 animate__animated animate__fadeIn" alt="...">
+          </div>
+          <h1 class="fw-bold animate__animated animate__fadeIn text-bg" style="text-shadow: 2px 2px #8d3100;">Rolyn Jay P. Gonzales</h1>
+          <p class="lead fst-italic animate__animated animate__fadeIn text-bg" style="text-shadow: 2px 2px #8d3100;">An enthusiastic digital designer and developer that loves to bring concepts to reality.</p>
         </div>
-        <h1 class="fw-bold animate__animated animate__fadeIn">Rolyn Jay P. Gonzales</h1>
-        <p class="lead text-dark fst-italic animate__animated animate__fadeIn">An enthusiastic digital designer and developer that loves to bring concepts to reality.</p>
       </div>
-    </div>
-    <hr>
-    <div class="row py-lg-3">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <div class="row">
-          <div class="col-sm-4 col-md-4 col-lg-4">
+      <hr style="border-top: 1px solid #FCBB6D;">
+      <div class="row py-lg-3">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <div class="row">
+            <div class="col-sm-4 col-md-4 col-lg-4">
+  
+              <div class="card-control animate__animated animate__bounceIn mb-1" id="about_btn">
+                <i class="fa-solid fa-user-vneck fa-2x text-bg"></i>
+                <div class="card__content d-flex align-items-center justify-content-center">
+                  <p class="fw-bold">ABOUT ME
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+              <div class="card-control animate__animated animate__bounceIn mb-1" id="projects_btn">
+                <i class="fa-solid fa-code fa-2x text-bg"></i>
+                <div class="card__content d-flex align-items-center justify-content-center">
+                  <p class="fw-bold">PROJECTS
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+              <div class="card-control animate__animated animate__bounceIn mb-1" id="contact_btn">
+                <i class="fa-solid fa-envelopes-bulk fa-2x text-bg"></i>
+                <div class="card__content d-flex align-items-center justify-content-center">
+                  <p class="fw-bold">CONTACT ME
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
 
-            <div class="card-control animate__animated animate__bounceIn mb-1" id="about_btn">
-              <i class="fa-solid fa-user-vneck fa-2x text-bg"></i>
-              <div class="card__content d-flex align-items-center justify-content-center">
-                <p class="fw-bold">ABOUT ME
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4 col-md-4 col-lg-4">
-            <div class="card-control animate__animated animate__bounceIn mb-1" id="projects_btn">
-              <i class="fa-solid fa-code fa-2x text-bg"></i>
-              <div class="card__content d-flex align-items-center justify-content-center">
-                <p class="fw-bold">PROJECTS
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4 col-md-4 col-lg-4">
-            <div class="card-control animate__animated animate__bounceIn mb-1" id="contact_btn">
-              <i class="fa-solid fa-envelopes-bulk fa-2x text-bg"></i>
-              <div class="card__content d-flex align-items-center justify-content-center">
-                <p class="fw-bold">CONTACT ME
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
 <main>
   <section class="py-5 container bg" id="about_tab">
     <div class="row">
